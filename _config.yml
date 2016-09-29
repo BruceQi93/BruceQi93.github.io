@@ -1,0 +1,43 @@
+# Site settings
+title: Bruce Qi的博客 - GitHub.io
+description: A blog about unity developer
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://bruceqi93.github.io/" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+
+# User settings
+username: Bruce Qi Blog
+user_description: Unity Developer at github
+user_title: Unity Developer
+email: qiwentao93@163.com
+weibo_username:     BruceQi
+zhihu_username:     BtuceQi
+github_username:    BruceQi93
+#linkedin_username:  firstname-lastname-idxxxx
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+# For external links add external: true
+links:
+  - title: Home
+    url: /
+  - title: Series
+    url: /series
+  - title: Tags
+    url: /tags
+  - title: About Me
+    url: /about
+
+# exclude my node related stuff
+exclude: ['package.json', 'src', 'node_modules']
