@@ -5,7 +5,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bruceqi93.github.io/" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
-username: Bruce Qi Blog
+username: Bruce Qi
 user_description: Unity Developer at github
 user_title: Unity Developer
 email: qiwentao93@163.com
