@@ -5,9 +5,38 @@
     <description>A blog about unity developer</description>
     <link>https://bruceqi93.github.io//</link>
     <atom:link href="https://bruceqi93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Oct 2016 13:22:47 +0800</pubDate>
-    <lastBuildDate>Mon, 17 Oct 2016 13:22:47 +0800</lastBuildDate>
+    <pubDate>Tue, 18 Oct 2016 13:24:08 +0800</pubDate>
+    <lastBuildDate>Tue, 18 Oct 2016 13:24:08 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>第一幕</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;很长时间里就想找一个简单点的，干净点的地方写一些关于学习和项目中的一些收获，放一些比较好的技术文章，国内一些博客网站杂的东西太多，不太喜欢，后来在知乎上看到有人推荐可以用&lt;strong&gt;github page&lt;/strong&gt;来搭建一个个人博客，看了一下感觉非常nice，网站上面的东西全由自己部署，重要的是这还是免费的，这对我等青(qiong)年(bi)太友好了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;为什么要搭建这个博客网站&lt;/h2&gt;
+
+&lt;p&gt;虽然现在已经很少人写博客了，但写博客有一个好处：你写出来的东西不仅仅是你自己看，放到网上有可能会被别人看到，所以如果你不想被别人说垃圾，就要认认真真的写好，这个过程也是对自己思路的一个提升。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;怎么搭建这个博客网站&lt;/h2&gt;
+
+&lt;p&gt;其实这个博客很早就搞了，只是当时这里面有些东西不太懂，有一些问题，后来慢慢地解决了，直到现在才写这篇序言。这个博客我是直接从网上下的 &lt;a href=&quot;https://jekyllthemes.io/&quot;&gt;jekyll模板&lt;/a&gt;,然后改了一下就作为自己的博客，这个模板涉及到&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt;语言,我不太懂这方面，但是看懂代码改一下还是会的，相信这对大部分码农应该不是难事。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;以后有时间，把一些解决的技术难点放到这里，不仅可以防止自己忘了还能回来看看，还能为其他人解决问题&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Oct 2016 00:00:00 +0800</pubDate>
+        <link>https://bruceqi93.github.io//2016/10/17/the-first/</link>
+        <guid isPermaLink="true">https://bruceqi93.github.io//2016/10/17/the-first/</guid>
+        
+        <category>闲笔</category>
+        
+        
+        <category>Jekyll is awesome</category>
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll</title>
