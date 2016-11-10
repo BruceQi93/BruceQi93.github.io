@@ -26,7 +26,7 @@ categories:
 
 下面将分为四种情况(×代表不勾选，√代表勾选)：
 
-  | Apply Root Motion | Bake into Pose
+ 情况 | Apply Root Motion | Bake into Pose
 ---- | ------------- | ------------
 1 | × | √ |
 2 | √ | √ |
