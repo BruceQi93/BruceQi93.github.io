@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "角色动画的apply root motion和bake int pose问题"
+title: "角色动画的apply root motion和bake into pose问题"
 date: 2016-10-20
 image: '/assets/img/'
 description: '关于模型中的动画的位移变换问题.'
