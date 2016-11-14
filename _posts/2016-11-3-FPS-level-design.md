@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "FPS类游戏的关卡设计"
-date: 2016-10-25
+date: 2016-11-03
 image: '/assets/img/'
 description: '探讨FPS类游戏的关卡设计.'
 tags:
