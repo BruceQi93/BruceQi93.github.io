@@ -42,6 +42,7 @@ categories:
 {% highlight ruby %}
 	using UnityEngine;
 	using System.Collections;
+
     public class LoadAsset : MonoBehaviour {
 
       void Start()
