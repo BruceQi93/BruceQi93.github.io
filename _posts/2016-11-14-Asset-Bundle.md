@@ -24,14 +24,14 @@ using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
-public class BuildAssetBundleScript : MonoBehaviour {
+    public class BuildAssetBundleScript : MonoBehaviour {
 
-   [MenuItem("AssetBundle/Build")]
-   static void BuildAssetBundle()
-   {
+      [MenuItem("AssetBundle/Build")]
+      static void BuildAssetBundle()
+      {
     	BuildPipeline.BuildAssetBundles(Application.dataPath + "/AssetBundle");
-   }
-}
+      }
+    }
 {% endhighlight %}
 
 *注：通过 BuildPipeline.BuildAssetBundles 方法即可将设置了Asset Bundle的资源全部打包，括号里面是存放Asset Bundle文件的文件夹路径，必须要先在工程中创建出这个文件夹，不然打包的时候会报错。*
@@ -41,15 +41,15 @@ public class BuildAssetBundleScript : MonoBehaviour {
 3、在场景中新建一个空物体，在其上添加一个脚本，命名为LoadAsset.cs。代码如下：
 
 {% highlight ruby %}
-public class LoadAsset : MonoBehaviour {
+    public class LoadAsset : MonoBehaviour {
 
-   void Start()
-   {
-   StartCoroutine(Load());
-   }
+      void Start()
+      {
+         StartCoroutine(Load());
+      }
 
-   IEnumerator Load()
-   {
+      IEnumerator Load()
+      {
         //打包后的资源所在的文件夹
         string assetPath = "file://" + Application.dataPath + "/AssetBundle/";
         //要加载的目标资源的名称
@@ -93,14 +93,14 @@ public class LoadAsset : MonoBehaviour {
                 Instantiate(cube);
                 //卸载资源
                 cubeBundle.Unload(false);
-           }
-       }
-   }
-}
+          }
+        }
+      }
+    }
 
 {% endhignlight %}
 
 ---
 [工程文件下载地址](https://github.com/BruceQi93/Unity_AssetBundleTest)
 
-*注：以上的工程是在Unity 5.3.4版本下创建的，其他版本可能略有出入，本文原创。*
+*注：以上的工程是在Unity 5.3.4版本下创建的，其他版本可能略有出入，本文系原创。*
