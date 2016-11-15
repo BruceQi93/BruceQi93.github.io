@@ -17,12 +17,12 @@ categories:
 ### 打包
 
 1、在场景中新建一个Cube，将其做成一个预设体，再创建一个材质,命名为red,分别将预设体cube和材质red的Asset Bundle名称命名为cube，red，在Unity中Asset Bundle的名称默认为小写。
-2、新建一个C#脚本，命名为BuildAssetBundleScript.cs。代码如下：
 
+2、新建一个C#脚本，命名为BuildAssetBundleScript.cs。代码如下：
 {% highlight ruby %}
-using UnityEngine;
-using System.Collections;
-using UnityEditor;
+    using UnityEngine;
+    using System.Collections;
+    using UnityEditor;
 
     public class BuildAssetBundleScript : MonoBehaviour {
 
@@ -39,8 +39,9 @@ using UnityEditor;
 ### 加载
 
 3、在场景中新建一个空物体，在其上添加一个脚本，命名为LoadAsset.cs。代码如下：
-
 {% highlight ruby %}
+	using UnityEngine;
+	using System.Collections;
     public class LoadAsset : MonoBehaviour {
 
       void Start()
@@ -93,10 +94,10 @@ using UnityEditor;
                 Instantiate(cube);
                 //卸载资源
                 cubeBundle.Unload(false);
+            }
           }
         }
       }
-    }
 
 {% endhighlight %}
 
