@@ -98,7 +98,7 @@ using UnityEditor;
       }
     }
 
-{% endhignlight %}
+{% endhighlight %}
 
 ---
 [工程文件下载地址](https://github.com/BruceQi93/Unity_AssetBundleTest)
