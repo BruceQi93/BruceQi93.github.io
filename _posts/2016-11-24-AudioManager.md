@@ -115,4 +115,5 @@ categories:
 
 * 将所有用到的音频添加到新建的空物体Inspector面板的AudioManager脚本下的音频片段的数组中。
 * 在其他的脚本中需要添加背景音乐的地方，添加以下代码：AudioManager.PlayBGM("背景音乐的名称")；
-* 在需要添加音效的地方，添加以下代码：AudioManager.PlayEffectAu("音效名称")；即可。
+* 在需要添加音效的地方，添加以下代码：
+AudioManager.PlayEffectAu("音效名称")；即可。
