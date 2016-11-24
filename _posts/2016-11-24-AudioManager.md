@@ -110,7 +110,7 @@ categories:
 	            PlayEffectAu(audioDic[acName]);
 	        }
 	    }
-}
+	}
 {% endhighlight %}
 
 * 将所有用到的音频添加到新建的空物体Inspector面板的AudioManager脚本下的音频片段的数组中。
