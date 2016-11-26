@@ -13,7 +13,7 @@ categories:
 
 > 最近在给项目中添加局域网功能时，发现在Unity的新版网络Unet中的NetworkManager下只能添加一个PlayerPrefab，也就是说在每个客户端只能Spawn出相同的角色模型，这在实际游戏项目中是不可能的，整个游戏只有一个模型会使游戏感到单调，然后查了一些资料，在Unity工程中测试了一下，终于找到了解决办法。
 
-##### 解决办法
+### 解决办法
 解决方案就是：重写NetworkBehavior中的**OnServerAddPlayer**方法，自己写一个脚本让他继承NetworkManager，不用引擎给的那个NetworkManager组件。
 {% highlight ruby %}
      public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
@@ -38,10 +38,8 @@ categories:
 
 * 另外，引擎提供了一个NetworkManagerHUD组件用来显示网络连接的UI界面，用来简单的测试server端和client端连接，但是很丑，你可以自己做一个好看点的UI，只需要在代码中设置IP地址和端口号，然后写个方法注册到按钮上即可。
 
-我在Unity里做了个小demo，有两个角色cube和capsule，自己做了一个简单的UI界面，可以选择角色。
-
+我在Unity里做了个小demo，有两个角色cube和capsule，自己做了一个简单的UI界面，可以选择指定的角色。
 ![img](/assets/img/Unet/Unet-Addplayer.png)
-
 文末有下载地址代码如下：
 {% highlight ruby %}
 	using UnityEngine;
