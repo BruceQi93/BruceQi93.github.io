@@ -39,7 +39,9 @@ categories:
 * 另外，引擎提供了一个NetworkManagerHUD组件用来显示网络连接的UI界面，用来简单的测试server端和client端连接，但是很丑，你可以自己做一个好看点的UI，只需要在代码中设置IP地址和端口号，然后写个方法注册到按钮上即可。
 
 我在Unity里做了个小demo，有两个角色cube和capsule，自己做了一个简单的UI界面，可以选择角色。
+
 ![img](/assets/img/Unet/Unet-Addplayer.png)
+
 文末有下载地址代码如下：
 {% highlight ruby %}
 	using UnityEngine;
