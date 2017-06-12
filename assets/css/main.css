@@ -922,6 +922,8 @@ html,body{
     font-weight:300;
     font-style:normal;
     font-size:1.25rem;
+    max-height:135px;
+    overflow:hidden;
 }
 .post-item 
 .content 
