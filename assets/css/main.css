@@ -1045,7 +1045,7 @@ html,body{
  }
  .post-content h1{
      font-size:1.875rem;
-     line-height:1.4;
+     line-height:1.0;
  }
  @media only screen and (min-width:37.5rem){
      .post-content h1{
@@ -1054,7 +1054,7 @@ html,body{
  }
  .post-content h2{
      font-size:1.375rem;
-     line-height:1.4;
+     line-height:1.0;
  }
  @media only screen and (min-width:37.5rem){
      .post-content h2{
@@ -1063,7 +1063,7 @@ html,body{
  }
  .post-content h3{
      font-size:1.125rem;
-     line-height:1.4;
+     line-height:1.0;
  }
  @media only screen and (min-width:37.5rem){
      .post-content h3{
