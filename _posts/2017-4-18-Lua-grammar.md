@@ -148,6 +148,7 @@ table是Lua的一种数据结构用来创建不同的数据类型。如数组、
     for index=1,table.getn(myTable) do
     ...
     end
+
 (2).所有的表都可以通过下面的方式遍历
 
     for index,value in pairs(myTable) do
@@ -157,7 +158,7 @@ table是Lua的一种数据结构用来创建不同的数据类型。如数组、
 #### Lua元表
 Lua提供了元表来改变table的行为，每个行为关联了对应的元方法。
 
-处理元表的函数;
+处理元表的函数:
 
 * setmetatable(table,metatable):对指定的table设置元表。
 * getmetatable(table):返回对象的元表。
@@ -208,7 +209,6 @@ __newindex元方法用来对表更新，__index则用来对表访问。
     S:funName()
 
 实现封装：(使用Lua中的闭包函数)
-
     --需要一个闭包函数作为类的创建工厂
     function newAccout(initialBalance)
       local self={balance=initialBalance}
@@ -231,7 +231,6 @@ __newindex元方法用来对表更新，__index则用来对表访问。
 *参考文章:*
 
 * [Lua面向对象](http://www.cnblogs.com/stephen-liu74/archive/2012/03/28/2421656.html)
-
 * [Lua面向对象实现](http://www.tuicool.com/articles/QVBBRvq)
 
 ---
