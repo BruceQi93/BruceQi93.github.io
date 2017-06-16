@@ -963,7 +963,7 @@ html,body{
     font-weight:300;
     font-style:normal;
     font-size:1.125rem;
-    line-height:2;
+    line-height:1.5;
     letter-spacing:.01rem;
 }
 .post-content p:before,
