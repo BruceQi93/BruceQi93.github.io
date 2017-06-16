@@ -68,6 +68,7 @@ overdraw是指相同的像素被多次渲染，因此要控制绘制顺序。
 如果需要手动调整FPS，先关闭垂直同步，然后在Awake方法里手动设置FPS,
 
     Application.targetFrameRate=45;
+
 降低FPS的好处：可以省电，减少手机发热；稳定游戏FPS，减少卡顿的情况。
 
 待机时，调整游戏的FPS为1，节省电量。
