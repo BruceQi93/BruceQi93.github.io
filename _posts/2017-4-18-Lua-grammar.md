@@ -7,13 +7,15 @@ description: 'Lua的基本语法.'
 tags:
 - Lua语法
 categories:
-- Lua 
+- Unity热更新 
 ---
 
-> Lua是一个以性能著称的轻量级的脚本语言。可以跨平台运行解析，而不需要编译的过程。Lua是一个区分大小写的编程语言。在游戏开发中主要用于热更新。
+> Lua是一个以性能著称的轻量级的脚本语言。可以跨平台运行解析，而不需要编译的过程。Lua是一个区分大小写的编程语言。
 
 [Lua语法学习](http://www.runoob.com/lua/lua-tutorial.html)
+
 #### 变量
+
 1、标识符
 
 Lua中使用标识符定义一个变量，标识符由字母，数字，下划线组成。最好不要使用下划线加大写字母的标识符，因为Lua的保留字也是这样。一般约定，以下划线开头连接一串大写字母的名字（如_VERSION)被保留用于Lua内部全局变量。
@@ -42,7 +44,9 @@ Lua定义变量是没有类型的，根据存储什么数据来决定是什么�
 变量默认是全局的。全局变量不需要声明，给一个变量赋值后即创建了这个全局变量，如果想删除一个全局变量，只需要将变量赋值给nil。删除table表里的变量也是一样的。
 
 局部变量的作用域从声明位置开始到所在语句块结束。
+
 #### 运算符
+
 1、算术运算符。+、—、*、/、%、^(没有++，--)。
 
 2、关系运算符。<、>、<=、>=、==、~=(表！=)。
@@ -52,7 +56,9 @@ Lua定义变量是没有类型的，根据存储什么数据来决定是什么�
 4、连接运算符。、、表连接两个字符串。
 
 5、一元运算符。#，返回字符串或表的长度。
+
 #### if语句
+
     1、if 条件 then
        end
 
@@ -64,7 +70,9 @@ Lua定义变量是没有类型的，根据存储什么数据来决定是什么�
        elseif 条件 then
        else
        end
+
 #### 循环语句
+
 1、while循环
 
        while 条件 do
@@ -91,13 +99,17 @@ Lua定义变量是没有类型的，根据存储什么数据来决定是什么�
        end
 
    *注：break可以终止循环，没有continue语法。*  
+
 #### 函数
+
     function 方法名（参数1，参数2）
 	...
     end
 
 可变参数，Lua函数可以接受可变数目的参数，在函数参数列表中使用三点(...)表示函数有可变的参数。Lua将函数的参数放在一个叫arg的表中。
+
 #### 迭代器
+
 在Lua中迭代器是一种支持指针类型的结构，它可以遍历集合中每一个元素。
 
     for k,v in pairs(t) do
@@ -112,7 +124,9 @@ pairs和ipairs区别
 
 * ipairs只遍历值，按照索引升序遍历，索引中断停止遍历，不能返回nil，只能返回数字0，如果遇到nil则退出，它只能遍历到集合中出现的第一个不是整数的key。
 * pairs能遍历集合中的所有元素。还可以返回nil。
+
 #### table（表）
+
 table是Lua的一种数据结构用来创建不同的数据类型。如数组、字典等。
 
 1、table的创建
@@ -140,7 +154,9 @@ table是Lua的一种数据结构用来创建不同的数据类型。如数组、
     for index,value in pairs(myTable) do
     ...
     end
+
 #### Lua元表
+
 Lua提供了元表来改变table的行为，每个行为关联了对应的元方法。
 
 处理元表的函数:
@@ -165,7 +181,9 @@ __newindex元方法：
 __newindex元方法用来对表更新，__index则用来对表访问。
 
 当给表的一个缺少的所有赋值，解释器就会查找__newindex元方法；如果存在则调用这个函数而不赋值。
+
 #### Lua面向对象:(回溯查询)
+
 对象由属性和方法组成，Lua中的类可以用table来描述对象的属性，function表示方法，来进行模拟。至于继承可以通过metatable进行模拟。
 
 一个简单的类继承：
@@ -212,6 +230,65 @@ __newindex元方法用来对表更新，__index则用来对表访问。
     accl=newAccout(100)
     accl.withdraw(40)
     print(accl.getBalance())
+
+#### 模块
+
+模块类似于一个封装库，可以把一些公用的代码放在一个文件里，以API接口的形式在其他地方调用，有利于代码的重用和降低代码耦合度。Lua的模块是由变量、函数等已知元素组成的table。
+
+    --文件名为module.lua
+    
+    module={}		--定义一个名为module的模块
+    
+    module.constant="这是一个常量"	--定义一个常量
+    
+    function module.func1()
+    	io.write("公有函数")
+    end
+    
+    local function func2()
+    	print("私有函数")
+    end
+    
+    function module.func3()
+    	fun2()
+    end
+    
+    return module
+func2声明为程序块的局部变量，即表示一个私有函数，不能从外部访问模块里的这个私有函数，必须通过模块里的公有函数来调用。
+
+##### require函数
+
+Lua提供了require的函数用来加载模块。要加载一个模块，只需要调用即可。
+
+require("<模块名>") 或 require "<模块名>"
+
+执行require后会返回一个由模块常量或函数组成的table，并且还会定义一个包含该table的全局变量。
+
+require返回的值将被缓存，即使多次调用require，被调用文件也只运行一次。
+
+    --mod.lua包含print("mod2")
+    
+    local a=require("mod2")		--输出"mod2"
+    
+    local b=require("mod2")		--不输出，实际为b=a
+    
+Dofile是不缓存的版本的require。
+
+    Dofile("mod2")		--输出"mod2"
+    Dofile("mod2")		--输出"mod2"
+
+loadfile读取文件但不执行
+    
+    f=loadfile("mod2.lua")
+    
+    f()		--输出“mod2”
+
+loadstring读取代码字符串
+
+    f=loadstring("print('Lua is cool')")
+    
+    f()		输出“Lua is cool”
+
 
 *参考文章:*
 
