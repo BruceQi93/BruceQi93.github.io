@@ -13,7 +13,7 @@ categories:
 
 > Tolua是uLua的第三代热更方案。
 
-#### C#调用Lua
+#### C#调用Lua脚本
 
 1、执行一个Lua脚本里的代码
  
@@ -42,7 +42,7 @@ categories:
     object[] objs=func.Call((object)array)
     objs[i]
 
-#### Lua调用C#
+#### Lua调用C#脚本
 
 1、访问C#中的数组
 
