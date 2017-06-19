@@ -3,7 +3,7 @@ layout: post
 title: "【Unity热更新2】- ToLua使用基础"
 date: 2017-4-27
 image: '/assets/img/'
-description: '介绍ToLua热更使用基础.'
+description: 'ToLua热更使用基础.'
 tags:
 - ToLua
 - 热更新
@@ -48,5 +48,4 @@ _GT(typeof(你所定义的类名)),
 然后执行“Lua”——>“Gen Lua Wrap Files”。wrap出的文件就会生成在“.../ToLua/Source/Generate"的目录下。
 
 ---
-*注：以上内容来源于网上搜集整理*
 

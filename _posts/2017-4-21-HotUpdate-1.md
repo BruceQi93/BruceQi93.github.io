@@ -3,7 +3,7 @@ layout: post
 title: "【Unity热更新1】- 热更初探"
 date: 2017-4-21
 image: '/assets/img/'
-description: '介绍Unity如何进行热更新.'
+description: 'Unity如何进行热更新.'
 tags:
 - Lua
 - 热更新
@@ -40,7 +40,5 @@ Android/Ios:Application.persistentDataPath+"/LuaFramework"
 
 在移动端编写Lua的解析器，通过这个解析器，可以运行最新的Lua脚本，然后C#代码不需要变动，把控制游戏逻辑的代码都写成Lua脚本，以后只需要修改Lua脚本就好了。
 
-
 ---
-*注：以上内容来源于网上搜集整理*
 

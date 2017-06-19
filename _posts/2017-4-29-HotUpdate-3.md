@@ -22,6 +22,7 @@ categories:
     string fullPath=Application.dataPath+"/.../.../";(Lua脚本所在的具体路径）
     lua.AddSearchPath(fullPath);
     lua.DoFile("xxx.lua");
+
 2、调用Lua函数
 
     LuaFunction func=lua.GetFunction("函数名"); 或者 LuaFunction func=lua[函数名] as LuaFunction;
@@ -49,5 +50,4 @@ categories:
     t[i]
 
 ---
-*注：以上内容来源于网上搜集整理*
 
