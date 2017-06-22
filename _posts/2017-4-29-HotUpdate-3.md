@@ -11,8 +11,6 @@ categories:
 - Unity热更新 
 ---
 
-> Tolua是uLua的第三代热更方案。
-
 #### C#调用Lua脚本
 
 1、执行一个Lua脚本里的代码
@@ -48,6 +46,12 @@ categories:
 
     local t=array:ToTable()
     t[i]
+
+2、通过"."(点号)来使用非静态的变量及静态的变量和方法。
+
+3、通过":"(冒号)来使用非静态方法。
+
+4、创建GameObject：newObject(变量)。
 
 ---
 

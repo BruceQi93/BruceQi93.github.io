@@ -11,7 +11,7 @@ categories:
 - Unity热更新 
 ---
 
-> Tolua是uLua的第三代热更方案。
+> ToLua是uLua的第三代热更方案。核心思想是利用C#的反射，将C#类代码进行包装，并注册到Lua里。
 
 #### 安装ToLua插件版
 
@@ -46,6 +46,14 @@ public static string toluaBaseType=Application.dataPath+"/ThirdParty/ToLua/ToLua
 _GT(typeof(你所定义的类名)),
 
 然后执行“Lua”——>“Gen Lua Wrap Files”。wrap出的文件就会生成在“.../ToLua/Source/Generate"的目录下。
+
+#### 热更架构
+
+![img](/assets/img/Lua/framework.png)
+
+#### 更新流程
+
+![img](/assets/img/Lua/updateProcess.png)
 
 ---
 
