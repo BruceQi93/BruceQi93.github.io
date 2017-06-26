@@ -25,11 +25,13 @@ categories:
 
 6、LuaManager：继承Manager，入口类。初始化Lua代码加载路径，引用一个LuaState并封装其功能（读取lua文件、调用方法等）。
 
-7、ResourceManager：加载AssetBundle的相关操作。在PC平台上默认加载的是Assets\StreamingAssets里的东西，移动平台上则是Application.persistentDataPath。
+7、LuaHelper：提供了各种管理器的获取方法和一些函数回调。
 
-8、TreadManager：解包与下载资源。
+8、ResourceManager：加载AssetBundle的相关操作。在PC平台上默认加载的是Assets\StreamingAssets里的东西，移动平台上则是Application.persistentDataPath。
 
-9、PanelManager:默认lua创建的panel都要在tag为GuiCamera的物体下，提供创建panel的方法。
+9、TreadManager：解包与下载资源。
+
+10、PanelManager:默认lua创建的panel都要在tag为GuiCamera的物体下，提供创建panel的方法。
 
 #### 加载AB包的四个步骤：
 
