@@ -20,7 +20,7 @@ categories:
     	AppFacade.Instance.StartUp();   //启动游戏
     }
 
-2、上面的Start方法里调用了APPFacade.cs里的StartUp方法，同时调用了AppFacade构造方法。再调用AppFacade的InitFramework方法（AppFacade继承了Facade。AppFacade里的构造方法使用了父类即Facade里的构造方法。该构造方法调用了虚方法InitFramework。而子类AppFacade又重写了InitFramework方法）。
+2、上面的Start方法里调用了APPFacade.cs里的StartUp方法，同时调用了AppFacade构造方法。然后调用AppFacade的InitFramework方法（AppFacade继承了Facade。AppFacade里的构造方法使用了父类即Facade里的构造方法。该构造方法调用了虚方法InitFramework。而子类AppFacade又重写了InitFramework方法）。
 
     override protected void InitFramework()
     {
@@ -40,6 +40,8 @@ categories:
     AppFacade.Instance.AddManager<ThreadManager>(ManagerName.Thread);
     AppFacade.Instance.AddManager<ObjectPoolManager>(ManagerName.ObjectPool);
     AppFacade.Instance.AddManager<GameManager>(ManagerName.Game);
+
+5、GameManager.cs脚本启用，调用CheckExtractResource方法释放资源。判断数据存放目录释放存在，如果存在就启动OnUpdateResource协程，如果AppConst.UpdateMode=true就更新资源下载，否则不更新。如果不存在，就启动OnExtractResource释放协程。等更新完后，就调用OnInitialize方法，调用Game.lua文件中的OnInitOk方法，进入lua逻辑。
 
 4、PanelManager.cs里有一个创建面板的方法CreatePanel(string name, LuaFunction func = null)方法。方法里传入两个参数：面板的名字和一个lua方法。
 
@@ -99,5 +101,10 @@ categories:
     
     WWW = UnityEngine.WWW;
     GameObject = UnityEngine.GameObject;
+
+10、如果需要创建一个panel，只需要添加或修改下列文件：
+
+* 添加xxxPanel.lua、xxxCtrl.lua文件。
+* 修改define.lua、Game.lua、CtrlManager.lua。
 
 ---
