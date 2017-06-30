@@ -20,19 +20,18 @@ categories:
 
 2、新建一个C#脚本，命名为BuildAssetBundleScript.cs。代码如下：
 {% highlight csharp %}
+  using UnityEngine;
+  using System.Collections;
+  using UnityEditor;
 
-    using UnityEngine;
-    using System.Collections;
-    using UnityEditor;
+  public class BuildAssetBundleScript : MonoBehaviour {
 
-    public class BuildAssetBundleScript : MonoBehaviour {
-
-      [MenuItem("AssetBundle/Build")]
-      static void BuildAssetBundle()
-      {
-    	BuildPipeline.BuildAssetBundles(Application.dataPath + "/AssetBundle");
-      }
+    [MenuItem("AssetBundle/Build")]
+    static void BuildAssetBundle()
+    {
+   	  BuildPipeline.BuildAssetBundles(Application.dataPath + "/AssetBundle");
     }
+   }
 {% endhighlight %}
 
 *注：通过 BuildPipeline.BuildAssetBundles 方法即可将设置了Asset Bundle的资源全部打包，括号里面是存放Asset Bundle文件的文件夹路径，必须要先在工程中创建出这个文件夹，不然打包的时候会报错。*
