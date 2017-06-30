@@ -40,7 +40,6 @@ categories:
 
 3、在场景中新建一个空物体，在其上添加一个脚本，命名为LoadAsset.cs。代码如下：
 {% highlight ruby %}
-
 	using UnityEngine;
 	using System.Collections;
 
@@ -100,7 +99,6 @@ categories:
           }
         }
       }
-
 {% endhighlight %}
 
 ---
