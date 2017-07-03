@@ -188,7 +188,7 @@ Lua提供了元表来改变table的行为，每个行为关联了对应的元方
 
 __index元方法：
 
-当通过键来访问table时，如果该键没有值，lua就会寻找该table的metatable中的__index键。如果__index包含一个表格，Lua就会在表格中查找相应的键；__index元方法查看表中元素是否存在，如果不存在，返回nil；如果存在则由__index返回结果。
+当通过键来访问table时，如果该键没有值，lua就会寻找该table的metatable中的__index键。如果__index包含一个表格，Lua就会在表格中查找相应的键；如果__index包含一个函数，Lua就会调用那个函数，table和键会作为参数传递给函数。__index元方法查看表中元素是否存在，如果不存在，返回nil；如果存在则由__index返回结果。
 
 Lua查找一个表元素的步骤：
 
