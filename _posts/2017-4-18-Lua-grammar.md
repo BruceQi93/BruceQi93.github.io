@@ -127,7 +127,7 @@ pairs和ipairs区别
 
 #### table（表）
 
-table是Lua的一种数据结构用来创建不同的数据类型。如数组、字典等。
+table是Lua的一种数据结构用来创建不同的数据类型。如数组、字典等。通过table来解决模块(module)、包(package)和对象(Object)。
 
 1、table的创建
 
