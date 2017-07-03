@@ -155,6 +155,28 @@ table是Lua的一种数据结构用来创建不同的数据类型。如数组、
     ...
     end
 
+4、table元素的内存指向
+
+    mytable1={}
+    mytable1[1]="lua"
+    mytable1["test"]="修改前"
+    
+    --mytable2和mytable1指向同一个table
+    mytable2=mytable1
+    
+    print(mytable2[1])	--打印结果为：lua
+    print(mytable2["test"])		--打印结果为：修改前
+    
+    mytable2["test"]="修改后"
+    print(mytable1["test"])		--打印结果为：修改后
+    
+    --释放变量
+    mytable2=nil
+    --mytable1仍能访问
+    print(mytable1["test"])		--打印结果为：修改后
+
+当把表A赋值给另一个表B，两个表指向的是同一个表，当对表B中某一索引重新赋值，表A访问该索引的值为修改的值。如果将表B置为nil，表A仍然能访问元素。
+
 #### Lua元表
 
 Lua提供了元表来改变table的行为，每个行为关联了对应的元方法。
@@ -256,7 +278,7 @@ __newindex元方法用来对表更新，__index则用来对表访问。
     return module
 func2声明为程序块的局部变量，即表示一个私有函数，不能从外部访问模块里的这个私有函数，必须通过模块里的公有函数来调用。
 
-##### require函数
+#### require函数
 
 Lua提供了require的函数用来加载模块。要加载一个模块，只需要调用即可。
 
