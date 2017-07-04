@@ -52,7 +52,7 @@ this.gridParent = transform:FindChild('ScrollView/Grid');
 ```
 6、PromptCtrl.lua里调用了PanelManager里的CreatePanel方法。
 ```lua
-	panelMgr:CreatePanel('Prompt', this.OnCreate);
+panelMgr:CreatePanel('Prompt', this.OnCreate);
 ```
 7、然后调用lua里的方法OnCreate方法。该方法里得到UIpanelhe LuaBehaviour组件，调用AddClick方法，给btnOpen添加点击事件，调用Loadprefab方法，加载预设体。
 ```lua
@@ -102,8 +102,7 @@ networkMgr = LuaHelper.GetNetManager();
 WWW = UnityEngine.WWW;
 GameObject = UnityEngine.GameObject;
 ```
-10、如果需要创建一个panel，只需要添加或修改下列文件：
-
+10、如果需要创建一个panel，只需要添加或修改下列文件：  
 * 添加xxxPanel.lua、xxxCtrl.lua文件。
 * 修改define.lua、Game.lua、CtrlManager.lua。
 
