@@ -15,32 +15,32 @@ categories:
 1、新建一个脚本，引入编辑器命名空间：using UnityEditor;
 
 2、继承EditorWindow再设置MenuItem。
-
-    Public Class MyEditor:EditorWindow
-    {
-    	[MenuItem("Window/MyEditor")]
-    	Static void SetWindow()
-    	{
-    		EditorWindow.GetWindow<MyEditor>();
-    	}    
-    }
-
+```cs
+Public Class MyEditor:EditorWindow
+{
+	[MenuItem("Window/MyEditor")]
+	Static void SetWindow()
+	{
+		EditorWindow.GetWindow<MyEditor>();
+	}
+}
+```
 这样在菜单栏中点击Window->MyEditor就创建出一个自定义的窗口。
 
 3、对创建的窗口进行编辑。
-
-    private String text;
+```cs
+private String text;
    
-    Void OnGUI()
-    {
-    	//输入框
-    	text=EditorGUILayout.TextField("输入文字：",text);
-    
-    	//如果点击了XX按钮
-    	if(GUILayout.Button("XX"))
-    	{
-    		....//按钮点击处理
-    	}
+Void OnGUI()
+{
+	//输入框
+	text=EditorGUILayout.TextField("输入文字：",text);
+
+	//如果点击了XX按钮
+	if(GUILayout.Button("XX"))
+	{
+		....//按钮点击处理
+	}
 
 		//提示信息
 		EditorGUILayout.LabelField("注意：.....");
@@ -60,20 +60,19 @@ categories:
 		//如果创建了很多行的控件，需要鼠标滚动的话，就在定义这些控件的代码前后分别加上
 		EditorGUILayout.BeginScrollView();
 		EditorGUILayout.EndScrollView();
-    }
+}
 
-	//当窗口获得焦点时调用一次
-	Void OnFocus()
-	{
-		......
-	}
+//当窗口获得焦点时调用一次
+Void OnFocus()
+{
+	......
+}
 
-	//当窗口失去焦点时调用一次
-	Void OnLostFocus()
-	{
-		......
-	}
-
+//当窗口失去焦点时调用一次
+Void OnLostFocus()
+{
+	......
+}
+```
 ---
-*注：以上内容来源于网上搜集整理*
 
