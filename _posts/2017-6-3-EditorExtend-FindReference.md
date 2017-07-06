@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unity编辑器扩展-寻找脚本引用"
+title: "Unity编辑器扩展 - 寻找脚本引用"
 date: 2017-6-3
 image: '/assets/img/'
 description: '在工程中寻找一个脚本的所有引用.'

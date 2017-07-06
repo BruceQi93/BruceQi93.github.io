@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unity编辑器扩展-自定义窗口"
+title: "Unity编辑器扩展 - 自定义窗口"
 date: 2017-3-23
 image: '/assets/img/'
 description: '使用编辑器扩展开发小工具.'
