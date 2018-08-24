@@ -12,20 +12,20 @@ categories:
 
 > 在项目中遇到一个需求，一大段Text文字如果一页放不下就放下一页。通过计算单个字符长度再截断，效果不太好，因为字符有的胖些有的瘦些，占用的空间大小不一样。这样只能算出一段文字渲染后的长度，然后去填充。
 
-#### 1.核心代码
+#### 1. 核心代码
 ```csharp
-	Font myFont = text.font;
-	myFont.RequestCharactersInTexture(message,text.fontSize, text.fontStyle);
-	CharacterInfo characterInfo = new CharacterInfo();
-	
-	char[] arr = message.ToCharArray();
-	
-	foreach (char c in arr)
-	{
-	    myFont.GetCharacterInfo(c, out characterInfo, text.fontSize);
-	
-	    totalLength += characterInfo.advance;
-	}
+Font myFont = text.font;
+myFont.RequestCharactersInTexture(message,text.fontSize, text.fontStyle);
+CharacterInfo characterInfo = new CharacterInfo();
+
+char[] arr = message.ToCharArray();
+
+foreach (char c in arr)
+{
+    myFont.GetCharacterInfo(c, out characterInfo, text.fontSize);
+
+    totalLength += characterInfo.advance;
+}
 ```
 
 　　其中`RequestCharactersInTexture`是指定渲染哪些字符，`characterInfo`可以获得生成的去重后字符。`myFont.GetCharacterInfo(c, out characterInfo, text.fontSize)`分别获得每个字符的信息，`characterInfo.advance`就可以得到每个字符的渲染长度。
