@@ -10,8 +10,7 @@ categories:
 - Lua篇 
 ---
 
-#### 1.将字符串分割成一个一个单元，存在表中
-
+1.将字符串分割成一个一个单元，存在表中
 ```lua
 local s = "sofgs啊等级高5584撒旦法规"
 local tb = {}
@@ -19,22 +18,21 @@ for utfChar in string.gmatch(s, "[%z\1-\127\194-\244][\128-\191]*") do
     table.insert(tb, utfChar)  
 end
 
-如果要提取出字符串中的数字
+-- 如果要提取出字符串中的数字
 local s1 = ""
 local s2 = ""
 for k,v in pairs(tb) do
-	local n = tonumber(v)
-	if n then
-		s1 = s1..v
-	else
-		s2 = s2..v
-	end
+  local n = tonumber(v)
+  if n then
+	s1 = s1..v
+  else
+	s2 = s2..v
+  end
 end
 
 ```
 
-#### 2.删除table中重复的值　　 
-
+2.删除table中重复的值　　 
 ```lua
 function unique(t, bArray)  
     local check = {}  
@@ -55,7 +53,7 @@ function unique(t, bArray)
 end 
 ```
 
-#### 3.判断一个table是否是另一个table的子集或相同
+3.判断一个table是否是另一个table的子集或相同
 ```lua
 local A = {33,24,11}
 local B = {24,50,33,12,11}
