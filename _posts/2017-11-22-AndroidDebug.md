@@ -19,10 +19,10 @@ categories:
 4. 查看是否连接成功。输入命令：adb devices
 
 #### 2.打包项目调试
-在unity中，选择File -> Buld Settings -> 选择 Android，勾选 Development Build 和 Script Debugging这两项。点击Build&Run之后会自动编译文件并将APK推送到手机上安装。程序运行后在Mono中打开Run->Attach to process 会发现你手机的选项，选择手机，在脚本里面添加断点进行调试。
+&#8194;&#8194;&#8194;&#8194;在unity中，选择File -> Buld Settings -> 选择 Android，勾选 Development Build 和 Script Debugging这两项。点击Build&Run之后会自动编译文件并将APK推送到手机上安装。程序运行后在Mono中打开Run->Attach to process 会发现你手机的选项，选择手机，在脚本里面添加断点进行调试。
 
 #### 3.直接在控制台看日志
-当程序在手机上运行后，在控制台中输入：adb logcat -s Unity。即可在控制台中看到输入日志。清除之前logcat命令：adb logcat -c。将Unity的log信息输出到txt中：adb logcat -s Unity -d > xxx.txt
+&#8194;&#8194;&#8194;&#8194;当程序在手机上运行后，在控制台中输入：adb logcat -s Unity。即可在控制台中看到输入日志。清除之前logcat命令：adb logcat -c。将Unity的log信息输出到txt中：adb logcat -s Unity -d > xxx.txt
 
 ---
 
