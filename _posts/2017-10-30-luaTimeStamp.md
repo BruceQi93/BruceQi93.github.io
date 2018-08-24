@@ -12,7 +12,7 @@ categories:
 
 > 时间戳是种时间表示方式，指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。在程序中经常用于标识某一刻的时间。
 
-#### 1.时间戳转换为具体时间
+#### 1. 时间戳转换为具体时间
 
 ```lua
 local t = 141275362
@@ -21,9 +21,9 @@ print(time)
 
 输出：1974/06/24/11/09/22
 ```
+----------
 
 获得系统当前时间
-
 ```lua
 local table = os.date(“*t”,os.time()) 
 - 年：table.year，
@@ -33,15 +33,16 @@ local table = os.date(“*t”,os.time())
 - 分：table.min，
 - 秒：table.sec
 ```
+----------
 
-#### 2.具体时间转换为时间戳　　 
-
+#### 2. 具体时间转换为时间戳　　 
 ```lua
 os.time() -- 当前时间戳
 os.time({year=2012, month=5, day=17, hour=0, min=0, sec=0}) -- 指定时间的时间戳
 ```
+----------
 
-#### 3.将两个时间戳间隔转化为具体时间
+#### 3. 将两个时间戳间隔转化为具体时间
 ```lua
 function timeStampToTime(gapStamp)    
     local initialStamp = {year = 1970, month = 1, day = 1, hour = 8, min = 0, sec = 0}
