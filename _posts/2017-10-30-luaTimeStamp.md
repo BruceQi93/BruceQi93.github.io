@@ -14,7 +14,7 @@ categories:
 
 #### 1. 时间戳转换为具体时间
 
-1. 具体代码：  
+1. 代码：  
 ```lua
 local t = 141275362
 local time = os.date("%Y/%m/%d/%H/%M/%S",t)
@@ -33,18 +33,18 @@ local table = os.date(“*t”,os.time())
 - 分：table.min，
 - 秒：table.sec
 ```
-----------
 
 #### 2. 具体时间转换为时间戳
 
-1. 具体代码： 
+1. 代码： 
 ```lua
 os.time() -- 当前时间戳
 os.time({year=2012, month=5, day=17, hour=0, min=0, sec=0}) -- 指定时间的时间戳
 ```
 
 #### 3. 将两个时间戳间隔转化为具体时间
-1. 具体代码： 
+
+1. 代码： 
 ```lua
 function timeStampToTime(gapStamp)    
     local initialStamp = {year = 1970, month = 1, day = 1, hour = 8, min = 0, sec = 0}
