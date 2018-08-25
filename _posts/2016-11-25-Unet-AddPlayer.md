@@ -14,41 +14,48 @@ categories:
 > 最近在给项目中添加局域网功能时，发现在Unity的新版网络Unet中的NetworkManager下只能添加一个PlayerPrefab，也就是说在每个客户端只能Spawn出相同的角色模型，这在实际游戏项目中是不可能的，整个游戏只有一个模型会使游戏感到单调，然后查了一些资料，在Unity工程中测试了一下，终于找到了解决办法。
 
 ### 解决办法
-解决方案就是：重写NetworkBehavior中的**OnServerAddPlayer**方法，自己写一个脚本让他继承NetworkManager，不用引擎给的那个NetworkManager组件。
-{% highlight ruby %}
-     public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
-     	{
-			GameObject player = Instantiate(Resources.Load("Player1")) as GameObject;
-        	NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
-		}
-{% endhighlight %}
+&#8194;&#8194;&#8194;&#8194;解决方案就是：重写NetworkBehavior中的**OnServerAddPlayer**方法，自己写一个脚本让他继承NetworkManager，不用引擎给的那个NetworkManager组件。
+* 代码如下：
+```csharp
+	public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
+	{
+		GameObject player = Instantiate(Resources.Load("Player1")) as GameObject;
+		NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+	}
+```
+
+----------
 
 然后将Player添加到各个客户端：
-{% highlight ruby %}
-	 public override void OnClientConnect(NetworkConnection conn)
-    	{
-        	NetworkMessage test = new NetworkMessage();
-        	test.chosenClass = chosenCharacter;
+* 代码如下：
+```csharp
+	public override void OnClientConnect(NetworkConnection conn)
+	{
+		NetworkMessage test = new NetworkMessage();
+		test.chosenClass = chosenCharacter;
+	
+		ClientScene.AddPlayer(client.connection, 0, test);
+	}
+```
 
-        	ClientScene.AddPlayer(client.connection, 0, test);
-    	}
-{% endhighlight %}
+----------
 
-需要注意的是：要把所有的Player预制体注册进Spawn Prefab中，不然在server端生成了，但在客户端显示不了。
+&#8194;&#8194;&#8194;&#8194;需要注意的是：要把所有的Player预制体注册进Spawn Prefab中，不然在server端生成了，但在客户端显示不了。
 
 * 另外，引擎提供了一个NetworkManagerHUD组件用来显示网络连接的UI界面，用来简单的测试server端和client端连接，但是很丑，你可以自己做一个好看点的UI，只需要在代码中设置IP地址和端口号，然后写个方法注册到按钮上即可。
 
-我在Unity里做了个小demo，有两个角色cube和capsule，自己做了一个简单的UI界面，可以选择指定的角色。
+&#8194;&#8194;&#8194;&#8194;我在Unity里做了个小demo，有两个角色cube和capsule，自己做了一个简单的UI界面，可以选择指定的角色。
 ![img](/assets/img/Unet/Unet-Addplayer.png)
-文末有下载地址代码如下：
-{% highlight ruby %}
+文末有下载地址
+* 代码如下：
+```csharp
 	using UnityEngine;
 	using System.Collections;
 	using UnityEngine.UI;
 	using UnityEngine.Networking;
-
+	
 	public class MyNetWorkManager : NetworkManager {
-
+	
 	    public Text textIP;
 	    private int chosenCharacter = 0;
 	
@@ -132,7 +139,7 @@ categories:
 	        NetworkManager.singleton.networkAddress = ipAddress;
 	    }
 	}
-{% endhighlight %}
+```
 
 [工程文件下载地址](https://github.com/BruceQi93/Unity_UnetTest)
 

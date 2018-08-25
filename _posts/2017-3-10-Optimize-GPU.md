@@ -32,13 +32,14 @@ categories:
 4、层消隐
 
 通过给每个层（layer）设置一个可以看见的距离，当摄像机与设置该层的物体的距离超过这个值，该物体将不会再被渲染。
-
+* 代码如下：
+```csharp
     private float[] layers;
     layers=new float[32];
     layers[8]=10;
     layers[9]=20;
     Camera.main.layerCullDistance=layers;
-
+```
 #### 像素优化
 
 1、减少overdraw
@@ -66,8 +67,10 @@ overdraw是指相同的像素被多次渲染，因此要控制绘制顺序。
 在ProjectSetting->Quality中的VSync Count参数会影响FPS，EveryVBlank相当于FPS=60，EverySecondVBlank=30。
 
 如果需要手动调整FPS，先关闭垂直同步，然后在Awake方法里手动设置FPS,
-
-    Application.targetFrameRate=45;
+* 代码如下：
+```csharp
+    Application.targetFrameRate = 45;
+```
 
 降低FPS的好处：可以省电，减少手机发热；稳定游戏FPS，减少卡顿的情况。
 

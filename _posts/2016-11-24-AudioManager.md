@@ -13,15 +13,12 @@ categories:
 >在Unity中游戏开发中，整个游戏中有许多地方要添加音效，在每个地方都添加AudioSource组件是非常消耗资源的，所以建一个音频管理类将所有的音频统一进行管理，将非常的方便。
 
 * 首先新建一个空物体，在其上添加一个脚本，命名AudioManager.cs，用来管理所有的音频片段，代码如下：
-
-{% highlight ruby %}
-
+```csharp
 	using UnityEngine;
 	using System.Collections;
 	using System.Collections.Generic;
 
 	public class AudioManager : MonoBehaviour {
-
 	    //音频片段的数组
 	    public AudioClip[] audioClipArray;
 	    //音频库
@@ -111,7 +108,7 @@ categories:
 	        }
 	    }
 	}
-{% endhighlight %}
+```
 
 * 将所有用到的音频添加到新建的空物体Inspector面板的AudioManager脚本下的音频片段的数组中。
 * 在其他的脚本中需要添加背景音乐的地方，添加以下代码：AudioManager.PlayBGM("背景音乐的名称")；

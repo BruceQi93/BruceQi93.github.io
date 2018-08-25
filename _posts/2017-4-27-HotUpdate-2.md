@@ -24,18 +24,19 @@ Tolua插件版只有最基本的Lua解析，warp，打包等功能，适合大�
 #### 修改路径
 
 修改LuaConst中的路径：
-
-public static string luaDir=Application.dataPath+"/Lua";
-
-public static string toluaDir=Application.dataPath+"/ThirdParty/ToLua/ToLua/Lua";
+* 代码如下：
+```csharp
+	public static string luaDir=Application.dataPath+"/Lua";	
+	public static string toluaDir=Application.dataPath+"/ThirdParty/ToLua/ToLua/Lua";
+```
 
 修改CustomSettings中的路径：
-
-public static string saveDir=Application.dataPath+"/ThirdParty/ToLua/Source/Generate/";
-
-public static string luaDir=Application.dataPath+"/Lua/";
-
-public static string toluaBaseType=Application.dataPath+"/ThirdParty/ToLua/ToLua.BaseType/";
+* 代码如下：
+```csharp
+	public static string saveDir=Application.dataPath+"/ThirdParty/ToLua/Source/Generate/";
+	public static string luaDir=Application.dataPath+"/Lua/";
+	public static string toluaBaseType=Application.dataPath+"/ThirdParty/ToLua/ToLua.BaseType/";
+```
 
 #### wrap文件
 

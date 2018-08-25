@@ -46,7 +46,7 @@ Fixed function shader的核心是：
 Material{} 以及 SetTexture[_MainTex]{}
 
 Vertex and Fragment Shader的核心是：
-```cg
+```c
 CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag
@@ -55,7 +55,7 @@ ENDCG
 ```
 
 surface shader核心是：
-```cg
+```c
 GPROGRAM
 #pragma surface surf Lambert
 ENDCG

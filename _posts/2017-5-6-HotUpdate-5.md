@@ -40,7 +40,7 @@ categories:
 * 加载assetbundle的依赖文件。
 * 加载assetbundle。
 
-先通过Initialize方法加载总的清单文件，然后通过LoadPrefab方法来加载AB包，此时会把这个AB包的请求放在m_LoadQequests中，然后在OnLoadAsset方法对该AB包的所有请求进行处理，通过GetLoadedAssetBundle方法看内存中是否存在这个AB包，如果有就检查该AB包的依赖包是否也在内存中，如果都在，就把请求的包内资源加载进来，并回调方法。如果出现缺包情况，会通过OnLoadAssetBundle方法加载AB包及其依赖包。
+&#8194;&#8194;&#8194;&#8194;先通过Initialize方法加载总的清单文件，然后通过LoadPrefab方法来加载AB包，此时会把这个AB包的请求放在m_LoadQequests中，然后在OnLoadAsset方法对该AB包的所有请求进行处理，通过GetLoadedAssetBundle方法看内存中是否存在这个AB包，如果有就检查该AB包的依赖包是否也在内存中，如果都在，就把请求的包内资源加载进来，并回调方法。如果出现缺包情况，会通过OnLoadAssetBundle方法加载AB包及其依赖包。
 
 #### 热更新的四个步骤：
 
@@ -54,13 +54,11 @@ categories:
 
 #### 框架的工作流程：
 
-C#：
+C#：  
+&#8194;&#8194;&#8194;&#8194;打包后启动游戏，GameManager进行判断，如果是游戏安装后第一次启动，就进行解包，如果AppConst.UpdateMode为false，就不会检测更新，否则就进行更新操作。然后进入初始化操作，调用Game.lua中的OnInitOK方法，进入lua逻辑。
 
-打包后启动游戏，GameManager进行判断，如果是游戏安装后第一次启动，就进行解包，如果AppConst.UpdateMode为false，就不会检测更新，否则就进行更新操作。然后进入初始化操作，调用Game.lua中的OnInitOK方法，进入lua逻辑。
-
-lua：
-
-然后调用指定控制器的Awake方法、PanelManager的CreatePanel方法，调用C#代码，创建panel，为其添加LuaBehaviour，调用xxxPanel.lua的方法，获取控件引用，进行逻辑处理。
+lua：  
+&#8194;&#8194;&#8194;&#8194;然后调用指定控制器的Awake方法、PanelManager的CreatePanel方法，调用C#代码，创建panel，为其添加LuaBehaviour，调用xxxPanel.lua的方法，获取控件引用，进行逻辑处理。
 
 ---
 *[参考资料](http://blog.csdn.net/lyh916/article/details/45021703)*
