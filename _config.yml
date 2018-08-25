@@ -15,9 +15,7 @@ github_username:    BruceQi93
 #linkedin_username:  firstname-lastname-idxxxx
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
+markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 
