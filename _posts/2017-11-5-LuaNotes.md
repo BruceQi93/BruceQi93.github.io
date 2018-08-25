@@ -11,6 +11,7 @@ categories:
 ---
 
 1. 将字符串分割成一个一个单元，存在表中
+
 ```lua
 local s = "sofgs啊等级高5584撒旦法规"
 local tb = {}

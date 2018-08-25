@@ -16,6 +16,9 @@ github_username:    BruceQi93
 
 # Build settings
 markdown: kramdown
+markdown: kramdown
+kramdown:
+  input: GFM
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 
