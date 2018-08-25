@@ -15,10 +15,7 @@ github_username:    BruceQi93
 #linkedin_username:  firstname-lastname-idxxxx
 
 # Build settings
-markdown: kramdown
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: redcarpet
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 
